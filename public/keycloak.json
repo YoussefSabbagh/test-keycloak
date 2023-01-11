@@ -1,0 +1,5 @@
+{
+  "realm": "certification",
+  "url": "https://auth.gyfted.io/auth",
+  "clientId": "bookstore-client"
+}

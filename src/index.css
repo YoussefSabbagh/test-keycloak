@@ -1,13 +1,143 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer base {
+  body {
+    @apply font-body min-h-screen;
+    padding: 0;
+  }
+
+  a {
+    @apply text-inherit;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+}
+@layer components {
+  .container {
+    @apply w-full max-w-5xl my-0 mx-auto py-0 px-5 text-center;
+  }
+  .mobileMenu {
+    @apply flex-col w-full h-[calc(100vh-80px)] bg-lightGray opacity-0  absolute top-[80px] -left-full;
+  }
+  .desktopMenu {
+    @apply flex-row h-auto relative top-0 space-x-4 opacity-100;
+  }
+  .myFlex {
+    @apply flex justify-between items-center;
+  }
+  .title {
+    @apply font-title font-semibold text-2xl md:text-4xl lg:text-6xl;
+  }
+
+  .myBtn {
+    @apply py-2 px-4 border-black border rounded bg-black text-white text-center myFlex cursor-pointer hover:scale-95;
+  }
+
+  .btn-reverse {
+    @apply bg-white text-black;
+  }
+
+  .btn-block {
+    @apply w-full mt-5;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #e6e6e6;
+    margin-bottom: 60px;
+  }
+
+  .header ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header ul li {
+    margin-left: 20px;
+  }
+
+  .header ul li a {
+    display: flex;
+    align-items: center;
+  }
+
+  .header ul li a:hover {
+    color: #777;
+  }
+
+  .header ul li a svg {
+    margin-right: 5px;
+  }
+
+  .heading {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 50px;
+    padding: 0 20px;
+  }
+
+  .heading p {
+    color: #828282;
+  }
+
+  .goals {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .goal {
+    background-color: #f4f4f4;
+    margin: 10px 0;
+    padding: 20px 0 10px;
+    position: relative;
+  }
+
+  .goal .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    border: none;
+    background: none;
+  }
+
+  .form,
+  .content {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .form-group {
+    margin-bottom: 10px;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e6e6e6;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-family: inherit;
+  }
+
+  .form-group label {
+    text-align: left;
+    display: block;
+    margin: 0 0 5px 3px;
+  }
 }
